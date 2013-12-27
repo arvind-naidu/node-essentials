@@ -1,0 +1,6 @@
+npm init - create a package.json file interactively
+npm install <package> - install a package into node_modules
+npm install <package> --save - install a package and save a dependency in package.json
+npm update <package> - update a package to the latest version allowed by the version specification in package.json
+npm outdated - show packages that have versions newer than the one installed that are allowed by the version specification in package.json
+npm ls - see all packages your package depends on
