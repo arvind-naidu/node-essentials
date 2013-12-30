@@ -22,7 +22,7 @@ app.configure(function() {
   app.use(express.bodyParser()); // get information from html forms
 
   app.set('view engine', 'jade'); // set up ejs for templating
-
+  app.locals.pretty = true;
   // required for passport
   app.use(express.session({ secret: 'iamthebest' })); // session secret
   app.use(passport.initialize());
