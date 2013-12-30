@@ -10,14 +10,12 @@ html
       body { padding-top:80px; }
   body
     .container
-    
-      .jumbotron
-        .text-center
-          h1(span class='fa fa-lock').
-              Node Authentication
+      .jumbotron.text-center
+          h1(span class='fa fa-lock').  Node Authentication
 
-          p.
-            Login or Register with:
+          p
+           | Login or Register with:
 
-          a(href='/login' span class='btn btn-default fa fa-user') Local Login
-          a(href='/signup' span class='btn btn-default fa fa-user') Local Signup
+          a(href='/login' span class='btn btn-default fa fa-user')  Local Login
+          = ' '
+          a(href='/signup' span class='btn btn-default fa fa-user')   Local Signup
