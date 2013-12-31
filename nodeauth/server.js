@@ -12,7 +12,7 @@ var configDB = require('./config/database.js');
 // configuration ===============================================================
  mongoose.connect(configDB.url); // connect to our database
 
-// require('./config/passport')(passport); // pass passport for configuration
+require('./config/passport')(passport); // pass passport for configuration
 
 app.configure(function() {
 
@@ -22,7 +22,8 @@ app.configure(function() {
   app.use(express.bodyParser()); // get information from html forms
 
   app.set('view engine', 'jade'); // set up ejs for templating
-  app.locals.pretty = true;
+  app.locals.pretty = true; // to beautify jade after compiling to HTML
+
   // required for passport
   app.use(express.session({ secret: 'iamthebest' })); // session secret
   app.use(passport.initialize());
