@@ -33,7 +33,7 @@ var userSchema = mongoose.Schema({
 // methods
 // checking if password is valid using bcrypt
 userSchema.methods.validPassword = function(password) {
-  return bcrypt.compareSycn(password, this.local.password);
+  return bcrypt.compareSync(password, this.local.password);
 };
 
 // this method hashes the password and sets the users password

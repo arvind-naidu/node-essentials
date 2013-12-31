@@ -1,0 +1,27 @@
+// views/profile.jade
+doctype hrml
+html
+  head
+    title Node Authentication
+    link(rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+    link(rel='stylesheet' href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
+    style.
+      body { padding-top:80px; }
+  body
+    .container
+      .page-header.text-center
+
+        // renders to <h1 span='span' class='fa fa-anchor'>
+        h1(span class="fa fa-anchor").  Profile Page
+        br
+        a(href='/logout', class='btn btn-default btn-sm') Logout
+
+      .row
+        .col-sm-6
+          .well
+
+            h3(span class="fa fa-user").  Local
+
+            p <strong>id</strong>: #{ user._id }
+            p <strong>email</strong>: #{ user.local.email }
+            p <strong>password</strong>: #{ user.local.password}

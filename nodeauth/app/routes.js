@@ -13,20 +13,24 @@ module.exports = function(app, passport) {
   // ============================
   // show the login form
   app.get('/login', function(req, res) {
-    
+
     // render the page and pass in any flash data if exists
     res.render('login.jade', { message: req.flash('loginMessage') });
   });
 
   // process the login form
-  // app.post('/login', do all passport stuff);
+  app.post('/login', passport.authenticate('local-login', {
+    successRedirect : '/profile', // redirect to the secure profile section
+    failureRedirect : '/login', // redirect back to the signup page if there is an error
+    failureFlash    : true // allow flash messages
+  }));
 
   // ===========================
   // SIGNUP
   // ===========================
   // show the signup form
   app.get('/signup', function(req, res) {
-  
+
     // render the page and pass in any flash data if exists
     res.render('signup.jade', { message: req.flash('signupMessage') });
   });
@@ -48,7 +52,7 @@ module.exports = function(app, passport) {
       user : req.user // get the user out of the session and pass to template
     });
   });
-  
+
   // ===========================
   // LOGOUT
   // ===========================
@@ -60,9 +64,9 @@ module.exports = function(app, passport) {
 
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {
-  
+
   // if user is authenticated in the session, carry on
-  if (req,isAuthenticated())
+  if (req.isAuthenticated())
     return next();
 
   // if they aren't redirect them to the home page
