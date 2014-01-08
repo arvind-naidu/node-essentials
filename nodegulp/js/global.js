@@ -1,6 +1,6 @@
 $("#owl-demo").owlCarousel({
 
-  autoPlay: 2000,
+  autoPlay: 3000,
 
   items : 4,
   itemsDesktop : [1199,3],
